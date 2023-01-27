@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>MegaMart</title>
+
+    <script>
+     fetch('https://fakestoreapi.com/products?limit=5').then((data)=>{
+        return data.json();
+     }).then((products)=>{
+        products.forEach((product)=>{
+                const data1=`
+            <div class="product" >
+                        <h2 class="product-title">${product.title}</h2>
+                        <img src="${product.image}" alt="" class="product-img">
+                        <p class="product-description">${product.description}</p  
+                            <h4 class="product-category">${product.category}</h4> 
+                            <h3 class="product-price">${product.price}</h3>            
+                 </div>`
+            document.querySelector('.products').innerHTML+=data1;
+          });
+     }).catch((err)=>{
+                console.log(err);
+            })
+        callAPi()
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Welcome to worldwide Megamart!</h1>
+            <div class="location">
+                <img src="/Assets/icons/Location.png" alt="" class="img">
+                <h2> Deliver to 423651</h2>
+                <div class="vl"></div>
+            </div>
+            <div class="discount">
+                <img src="/Assets/icons/Discount.png" alt="" class="img">
+                <h2>Track your order</h2>
+                <div class="vl"></div>
+            </div>
+            <div class="offers">
+                <img src="/Assets/icons/Group.png" alt="" class="img">
+                <h2> All Offers</h2>
+            </div>
+        </div>
+        <div class="navbar">
+            <div class="menu-button">
+                <div class="bar1"></div>
+                <div class="bar2"></div>
+                <div class="bar3"></div>
+            </div>
+            <div class="mega">
+                <h1>MegaMart</h1>
+            </div>
+            <div class="search">
+                <img src="/Assets/icons/Search.png" alt="">
+                <div class="essential">
+                    <p>Search essentials, groceries and more...</p>
+                </div>
+                <div class="search-button">
+                    <div class="list1">
+                        <div class="circle"></div>
+                        <div class="bar-1"></div>
+                    </div>
+                    <div class="list2">
+                        <div class="circle"></div>
+                        <div class="bar-2"></div>
+                    </div>
+                    <div class="list3">
+                        <div class="circle"></div>
+                        <div class="bar-3"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="sign">
+                <img src="/Assets/icons/user.svg" alt="">
+                <div class="signin-name">
+                    <h1>Signin/Signout</h1>
+                </div>
+                <div class="vl-1"></div>
+            </div>
+            <div class="buy">
+                <img src="/Assets/icons/Buy.png" alt="">
+                <h1>Cart</h1>
+            </div>
+        </div>
+        <div class="list-menu-buttons">
+            <div class="button-1">
+                <h1>Groceries</h1>
+                <img src="/Assets/icons/Stroke-1-white.png" alt="">
+            </div>
+            <div class="button-2">
+                <h1>Premium Fruits</h1>
+                <img src="/Assets/icons/Stroke-1.png" alt="">
+            </div>
+            <div class="button-3">
+                <h1>Home & Kitchen</h1>
+                <img src="/Assets/icons/Stroke-1.png" alt="">
+            </div>
+            <div class="button-4">
+                <h1>Fashion</h1>
+                <img src="/Assets/icons/Stroke-1.png" alt="">
+            </div>
+            <div class="button-5">
+                <h1>Electronics</h1>
+                <img src="/Assets/icons/Stroke-1.png" alt="">
+            </div>
+            <div class="button-6">
+                <h1>Beauty</h1>
+                <img src="/Assets/icons/Stroke-1.png" alt="">
+            </div>
+            <div class="button-7">
+                <h1>Home Improvement</h1>
+                <img src="/Assets/icons/Stroke-1.png" alt="">
+            </div>
+            <div class="button-8">
+                <h1>Sports, Toys & Luggage</h1>
+                <img src="/Assets/icons/Stroke-1.png" alt="">
+            </div>
+        </div>
+        <div class="slideshow" id="slideshow-container">
+            <div id="slides">
+                <div class="Myslides ">
+                    <div class="text">
+                        <div class="deal-online">
+                            <h1>Best Deal Online on smart watches</h1>
+                        </div>
+                        <div class="smart-watch">
+                            <h1>SMART WEARABLE.</h1>
+                        </div>
+                        <div class="off">
+                            <h1>UP to 80% OFF</h1>
+                        </div>
+                    </div>
+                    <div class="digital-watch">
+                        <img src="/Assets/images/image 2.svg" alt="">
+                    </div>
+                </div>
+                <div class="Myslides">
+                    <div class="text">
+                        <div class="deal-online">
+                            <h1>Best Deal Online on groceries</h1>
+                        </div>
+                        <div class="smart-watch">
+                            <h1>GROCERIES</h1>
+                        </div>
+                        <div class="off">
+                            <h1>UP to 80% OFF</h1>
+                        </div>
+                    </div>
+                    <div class="digital-watch">
+                        <img src="/Assets/images/pic1.png" alt="">
+                    </div>
+                </div>
+                <div class="Myslides">
+                    <div class="text">
+                        <div class="deal-online">
+                            <h1>Best Deal Online on smart phone</h1>
+                        </div>
+                        <div class="smart-watch">
+                            <h1>SMART PHONE.</h1>
+                        </div>
+                        <div class="off">
+                            <h1>UP to 80% OFF</h1>
+                        </div>
+                    </div>
+                    <div class="digital-watch">
+                        <img src="/Assets/images/samsung-galaxy-s21-5g-removebg-preview.png" alt="">
+                    </div>
+                </div>
+                <div class="Myslides">
+                    <div class="text">
+                        <div class="deal-online">
+                            <h1>Best Deal Online on smart Iphone</h1>
+                        </div>
+                        <div class="smart-watch">
+                            <h1>SMART PHONE.</h1>
+                        </div>
+                        <div class="off">
+                            <h1>UP to 80% OFF</h1>
+                        </div>
+                    </div>
+                    <div class="digital-watch">
+                        <img src="/Assets/images/index-removebg-preview.png" alt="">
+                    </div>
+                </div>
+                <div class="Myslides">
+                    <div class="text">
+                        <div class="deal-online">
+                            <h1>Best Deal Online on smart machine</h1>
+                        </div>
+                        <div class="smart-watch">
+                            <h1>SMART MACHINE.</h1>
+                        </div>
+                        <div class="off">
+                            <h1>UP to 80% OFF</h1>
+                        </div>
+                    </div>
+                    <div class="digital-watch">
+                        <img src="/Assets/images/electronics-removebg-preview.png" alt="">
+                    </div>
+                </div>
+                <div class="Myslides">
+                    <div class="text">
+                        <div class="deal-online">
+                            <h1>Best Deal Online on smart Furniture</h1>
+                        </div>
+                        <div class="smart-watch">
+                            <h1>SMART CHAIR.</h1>
+                        </div>
+                        <div class="off">
+                            <h1>UP to 80% OFF</h1>
+                        </div>
+                    </div>
+                    <div class="digital-watch">
+                        <img src="/Assets/images/sofa-removebg-preview.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div id="slide-controller">
+                <a class="prev" onclick="plusSlides(-1)">
+                    <img src="/Assets/icons/left.png" alt=""></a>
+                <a class="next" onclick="plusSlides(1)">
+                    <img src="/Assets/icons/right.png" alt=""></a>
+
+            </div>
+
+            <div id="dot-controller" style="text-align:center">
+                <span class="dot" onclick="currentSlide(1)"></span>
+                <span class="dot" onclick="currentSlide(2)"></span>
+                <span class="dot" onclick="currentSlide(3)"></span>
+                <span class="dot" onclick="currentSlide(4)"></span>
+                <span class="dot" onclick="currentSlide(5)"></span>
+                <span class="dot" onclick="currentSlide(6)"></span>
+            </div>
+        </div>
+        <br> <br> <br><br><br>
+            <div class="products">
+            </div>
+        <br> <br> <br><br><br>
+        <div class="deals">
+            <div class="grab">
+                <h1>Grab the best deal on &nbsp&nbsp<mark class="blue
+                ">Smartphones</mark> </h1>
+            </div>
+            <div class="views">
+                <h1>View all</h1>
+                <img src="/Assets/icons/right.png" alt="">
+            </div>
+        </div>
+       
+        <div class="smartphones">
+            <div class="phone-1">
+                <img src="/Assets/images/s22.png" alt="">
+                <div class="dis-offer">
+                    <h1>56% <br>OFF
+                    </h1>
+                </div>
+                <div class="phone-1-name">
+                    <h1>Galaxy S22 Ultra</h1>
+                </div>
+                <div class="phone-1-price">
+                    <div class="phone-1-price-1">
+                        <h1>₹32999</h1>
+                    </div>
+                    <div class="phone-1-price-2">
+                        <h1><del>₹74999</del></h1>
+                    </div>
+                </div>
+                <div class="save-price-1">
+                    <h1><mark class="green">Save - ₹32999</mark></h1>
+                </div>
+            </div>
+            <div class="phone-2">
+                <img src="/Assets/images/m13.png" alt="">
+                <div class="dis-offer">
+                    <h1>56% <br>OFF
+                    </h1>
+                </div>
+                <div class="phone-2-name">
+                    <h1>Galaxy M13 (4GB | 64 GB )</h1>
+                </div>
+                <div class="phone-2-price">
+                    <div class="phone-2-price-1">
+                        <h1>₹10499</h1>
+                    </div>
+                    <div class="phone-2-price-2">
+                        <h1><del>₹14999</del></h1>
+                    </div>
+                </div>
+                <div class="save-price-2">
+                    <h1><mark class="green">Save - ₹4500</mark></h1>
+                </div>
+            </div>
+            <div class="phone-2">
+                <img src="/Assets/images/M33.png" alt="">
+                <div class="dis-offer">
+                    <h1>56% <br>OFF
+                    </h1>
+                </div>
+                <div class="phone-2-name">
+                    <h1>Galaxy M33 (4GB | 64 GB )</h1>
+                </div>
+                <div class="phone-2-price">
+                    <div class="phone-2-price-1">
+                        <h1>₹16999</h1>
+                    </div>
+                    <div class="phone-2-price-2">
+                        <h1><del>₹24999</del></h1>
+                    </div>
+                </div>
+                <div class="save-price-2">
+                    <h1><mark class="green">Save - ₹8000</mark></h1>
+                </div>
+            </div>
+            <div class="phone-2">
+                <img src="/Assets/images/M53.png" alt="">
+                <div class="dis-offer">
+                    <h1>56% <br>OFF
+                    </h1>
+                </div>
+                <div class="phone-2-name">
+                    <h1>Galaxy M53 (4GB | 64 GB )</h1>
+                </div>
+                <div class="phone-2-price">
+                    <div class="phone-2-price-1">
+                        <h1>₹31999</h1>
+                    </div>
+                    <div class="phone-2-price-2">
+                        <h1><del>₹40999</del></h1>
+                    </div>
+                </div>
+                <div class="save-price-2">
+                    <h1><mark class="green">Save - ₹9000</mark></h1>
+                </div>
+            </div>
+
+            <div class="phone-2">
+                <img src="/Assets/images/S22 ultra.png" alt="">
+                <div class="dis-offer">
+                    <h1>56% <br>OFF
+                    </h1>
+                </div>
+                <div class="phone-2-name">
+                    <h1>Galaxy S22 Ultra</h1>
+                </div>
+                <div class="phone-2-price">
+                    <div class="phone-2-price-1">
+                        <h1>₹67999</h1>
+                    </div>
+                    <div class="phone-2-price-2">
+                        <h1><del>₹85999</del></h1>
+                    </div>
+                </div>
+                <div class="save-price-2">
+                    <h1><mark class="green">Save - ₹18000</mark></h1>
+                </div>
+            </div>
+        </div>
+        <br> <br> <br><br><br>
+        <div class="deals">
+            <div class="grab">
+                <h1>Shop From &nbsp&nbsp<mark class="blue
+                ">Top Categories</mark> </h1>
+            </div>
+            <div class="views">
+                <h1>View all</h1>
+                <img src="/Assets/icons/right.png" alt="">
+            </div>
+        </div>
+        <div class="categories">
+            <div class="mobile">
+                <div class="mobile-img">
+                    <img src="/Assets/images/s22.png" alt="">
+                </div>
+                <div class="mobile-name">
+                    <h1>Mobile</h1>
+                </div>
+            </div>
+            <div class="cosmetic">
+                <div class="cosmetic-img">
+                    <img src="/Assets/images/cosmetic.png" alt="">
+                </div>
+                <div class="cosmetic-name">
+                    <h1>Cosmetic</h1>
+                </div>
+            </div>
+            <div class="electronic">
+                <div class="electronic-img">
+                    <img src="/Assets/images/washing-machine.jpg" alt="">
+                </div>
+                <div class="electronic-name">
+                    <h1>Electronics</h1>
+                </div>
+            </div>
+            <div class="furniture">
+                <div class="furniture-img">
+                    <img src="/Assets/images/sofa.jpg" alt="">
+                </div>
+                <div class="furniture-name">
+                    <h1>Furniture</h1>
+                </div>
+            </div>
+            <div class="watch">
+                <div class="watch-img">
+                    <img src="/Assets/images/image 2.svg" alt="">
+                </div>
+                <div class="watch-name">
+                    <h1>Watch</h1>
+                </div>
+            </div>
+            <div class="decor">
+                <div class="decor-img">
+                    <img src="/Assets/images/decor.png" alt="">
+                </div>
+                <div class="decor-name">
+                    <h1>Decor</h1>
+                </div>
+            </div>
+            <div class="accessories">
+                <div class="accessories-img">
+                    <img src="/Assets/images/har.png" alt="">
+                </div>
+                <div class="accessories-name">
+                    <h1>Accessories</h1>
+                </div>
+            </div>
+        </div>
+        <br> <br> <br><br><br>
+        <div class="deals">
+            <div class="grab">
+                <h1>Shop From &nbsp&nbsp<mark class="blue
+                ">Top electronics Brands</mark> </h1>
+            </div>
+            <div class="views">
+                <h1>View all</h1>
+                <img src="/Assets/icons/right.png" alt="">
+            </div>
+        </div>
+        <div class="electronic-brand">
+            <div class="iphone">
+                <div class="iphone-name">
+                    <h1>Iphone</h1>
+                </div>
+                <div class="apple">
+                    <img src="/Assets/images/Apple svg.png" alt="">
+                </div>
+                <div class="iphone-dis">
+                    <h1>UP to 80% OFF</h1>
+                </div>
+                <div class="circle-1"></div>
+                <div class="circle-2"></div>
+                <div class="iphone-img">
+                    <img src="/Assets/images/iphone.png" alt="">
+                </div>
+            </div>
+            <div class="realme">
+                <div class="realme-name">
+                    <h1>REALME</h1>
+                </div>
+                <div class="realme-logo">
+                    <img src="/Assets/images/Vector.png" alt="">
+                </div>
+                <div class="realme-dis">
+                    <h1>UP to 80% OFF</h1>
+                </div>
+                <div class="realme-circle-1"></div>
+                <div class="realme-circle-2"></div>
+                <div class="realme-img">
+                    <img src="/Assets/images/realme.png" alt="">
+                </div>
+            </div>
+            <div class="xiomi">
+                <div class="xiomi-name">
+                    <h1>XIADMI</h1>
+                </div>
+                <div class="xiomi-logo">
+                    <img src="/Assets/images/xiomi-logo.png" alt="">
+                </div>
+                <div class="xiomi-dis">
+                    <h1>UP to 80% OFF</h1>
+                </div>
+                <div class="xiomi-circle-1"></div>
+                <div class="xiomi-circle-2"></div>
+                <div class="xiomi-img">
+                    <img src="/Assets/images/Xiom.png" alt="">
+                </div>
+            </div>
+
+        </div>
+        <br> <br> <br><br><br>
+        <div class="deals">
+            <div class="grab">
+                <h1>Daily &nbsp &nbsp<mark class="blue
+                ">Essentials</mark> </h1>
+            </div>
+            <div class="views">
+                <h1>View all</h1>
+                <img src="/Assets/icons/right.png" alt="">
+            </div>
+        </div>
+        <div class="groceries">
+            <div class="daily">
+                <div class="essentials">
+                    <img src="/Assets/images/pic1.png" alt="">
+                </div>
+                <div class="essential-text">
+                    <h1>Daily Essentials</h1>
+                </div>
+                <div class="essential-dis">
+                    <h1>UP to 50% OFF</h1>
+                </div>
+            </div>
+            <div class="vegetable">
+                <div class="vegetale-img">
+                    <img src="/Assets/images/pic2.png" alt="">
+                </div>
+                <div class="vegetable-text">
+                    <h1>Vegetable</h1>
+                </div>
+                <div class="vegetable-dis">
+                    <h1>UP to 50% OFF</h1>
+                </div>
+            </div>
+            <div class="fruit">
+                <div class="fruit-img">
+                    <img src="/Assets/images/pic3.png" alt="">
+                </div>
+                <div class="fruit-text">
+                    <h1>Fruits</h1>
+                </div>
+                <div class="fruit-dis">
+                    <h1>UP to 50% OFF</h1>
+                </div>
+            </div>
+            <div class="strowbery">
+                <div class="strowbery-img">
+                    <img src="/Assets/images/pic4.png" alt="">
+                </div>
+                <div class="strowbery-text">
+                    <h1>Strowbery</h1>
+                </div>
+                <div class="strowbery-dis">
+                    <h1>UP to 50% OFF</h1>
+                </div>
+            </div>
+            <div class="mango">
+                <div class="mango-img">
+                    <img src="/Assets/images/pic5.png" alt="">
+                </div>
+                <div class="mango-text">
+                    <h1>Mango</h1>
+                </div>
+                <div class="mango-dis">
+                    <h1>UP to 50% OFF</h1>
+                </div>
+            </div>
+            <div class="chery">
+                <div class="chery-img">
+                    <img src="/Assets/images/pic6.png" alt="">
+                </div>
+                <div class="chery-text">
+                    <h1>Cherry</h1>
+                </div>
+                <div class="chery-dis">
+                    <h1>UP to 50% OFF</h1>
+                </div>
+            </div>
+        </div>
+        <div class="footer">
+            <div class="footer-circle-1"></div>
+            <div class="footer-circle-2"></div>
+            <div class="footer-text">
+                <div class="tittle-name">
+                    <h1>MegaMart</h1>
+                    <div class="contact">
+                        <h1>Contact Us</h1>
+                        <div class="whatsapp">
+                            <div class="whatsapp-logo">
+                                <img src="/Assets/images/whatsapp.png" alt="">
+                            </div>
+                            <div class="whatsapp-num">
+                                <h1>whats App <br>+92-3111001122</h1>
+                            </div>
+                        </div>
+                        <div class="call">
+                            <div class="call-logo">
+                                <img src="/Assets/images/Call.png" alt="">
+                            </div>
+                            <div class="call-num">
+                                <h1>Call Us <br>+92-3111001133</h1>
+                            </div>
+                        </div>
+                        <div class="download">
+                            <h1>Download App</h1>
+                            <div class="app">
+                                <img src="/Assets/images/appstore.png" alt="">
+                                <img src="/Assets/images/playstore.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="popular-categories">
+                    <h1>Top Popular Categories</h1>
+                    <div class="pop-categories-text">
+                        <div class="pop-categories-text-1">
+                            <li>
+                                <h1>Staples</h1>
+                            </li>
+
+
+                            <li>
+                                <h1>Beverages</h1>
+                            </li>
+
+
+                            <li>
+                                <h1>Personal Care</h1>
+                            </li>
+                            <li>
+                                <h1>Home Care</h1>
+                            </li>
+                            <li>
+                                <h1>Baby Care</h1>
+                            </li>
+                            <li>
+                                <h1>Vegetables & Fruits</h1>
+                            </li>
+                            <li>
+                                <h1>Snacks & Foods</h1>
+                            </li>
+                            <li>
+                                <h1>Dairy & Bakery</h1>
+                            </li>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="services">
+                    <h1>Customer Services</h1>
+                    <div class="services-text">
+                        <div class="services-text-1">
+                            <li>
+                                <h1>About Us</h1>
+                            </li>
+
+                            <li>
+                                <h1>Terms & Conditions</h1>
+                            </li>
+
+
+                            <li>
+                                <h1>FAQ</h1>
+                            </li>
+                            <li>
+                                <h1>Privacy Policy</h1>
+                            </li>
+                            <li>
+                                <h1>E-waste Policy</h1>
+                            </li>
+                            <li>
+                                <h1>Cancellation & Return Policy </h1>
+                            </li>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <hr>
+            <div class="terms">
+                <h1>© 2022 All rights reserved. Reliance Retail Ltd.</h1>
+            </div>
+        </div>
+        <script>
+            let slideIndex = 1;
+            showSlides(slideIndex);
+
+            function plusSlides(n) {
+                showSlides(slideIndex += n);
+            }
+
+            function currentSlide(n) {
+                showSlides(slideIndex = n);
+            }
+
+            function showSlides(n) {
+                let i;
+                let slides = document.getElementsByClassName("Myslides");
+                let dots = document.getElementsByClassName("dot");
+                if (n > slides.length) { slideIndex = 1 }
+                if (n < 1) { slideIndex = slides.length }
+                for (i = 0; i < slides.length; i++) {
+                    slides[i].style.display = "none";
+                }
+                for (i = 0; i < dots.length; i++) {
+                    dots[i].className = dots[i].className.replace(" active", "");
+                }
+                slides[slideIndex - 1].style.display = "flex";
+                dots[slideIndex - 1].className += " active";
+            }
+        </script>
+        <!-- <script>
+            document.addEventListener('DomContentLoaded', function () {
+                async function fetchProducts(url) {
+                    let data = await fetch(url);
+                    let response = await data.json();
+                    console.log(response);
+                };
+                fetchProducts('https://fakestoreapi.com/products/1');
+            })
+        </script> -->
+
+</body>
+
+</html>
+
+
+
+
+
+
+<!-- ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;; -->
